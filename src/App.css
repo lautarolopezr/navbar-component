@@ -1,0 +1,12 @@
+
+.card_products{
+    margin: 4px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.itemDetail{
+    max-width: 540px;
+    margin-top: 20px;
+}
