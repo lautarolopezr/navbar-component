@@ -1,5 +1,4 @@
-import ItemCount from "../components/Navbar/ItemCount/ItemCount";
-
+import ItemCount from '../Navbar/ItemCount/ItemCount';
 import React from 'react';
 
 const ItemDetail = ({item}) => {
