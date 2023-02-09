@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../../ItemLIst/ItemList";
-
-const ItemListContainer = () => {
+//mio
+const ItemListContainermio = () => {
     const [products , setProducts] = useState([])
     const {idCategory} = useParams()
 
@@ -11,13 +11,13 @@ const ItemListContainer = () => {
             fetch("../json/productos.json")
             .then(response => response.json())
             .then(items => {
-                const products = items.filter(prod => prod.idCategory === parseInt(idCategory))
+                const products = items.filter(prod => prod.idCategoria === parseInt(idCategory))
                 const productsList = ItemList({products}) // Product in JSX
                 setProducts(productsList)
             })
         }
         else{
-            fetch("./json/productos.json")
+            fetch("../json/productos.json")
             .then(response => response.json())
             .then(products => {
                 const productsList = ItemList({products}) // Products in JSX
@@ -32,4 +32,4 @@ const ItemListContainer = () => {
     );
 }
 
-export default ItemListContainer;
+export default ItemListContainermio;

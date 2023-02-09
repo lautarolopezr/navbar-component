@@ -1,20 +1,21 @@
+import { Link } from "react-router-dom";
 
 const Sections = () => {
     return (
         <>
             <li className="nav-item">
-                <a className="nav-link active" href="#">Home
+                <Link className="nav-link active" to={"/"}>Home
                     <span className="visually-hidden">(current)</span>
-                </a>
+                </Link>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">Products</a>
+                <Link className="nav-link" to={"/products"}>Products</Link>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">History</a>
+                <Link className="nav-link" to={"/history"}>History</Link>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">About Us</a>
+                <Link className="nav-link" to={"/about-us"}>About Us</Link>
             </li>
         </>
     );

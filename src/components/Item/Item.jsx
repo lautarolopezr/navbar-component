@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Item = ({item}) => {
@@ -8,7 +9,7 @@ const Item = ({item}) => {
                 <h4 className="card-title ">{item.nombre} {item.modelo}</h4>
                 <h5 className="card-title">{item.marca}</h5>
                 <p className="card-text">${new Intl.NumberFormat("de-DE").format(item.precio)}</p>
-                <button className="btn btn-dark">See Product</button>
+                <Link className="btn btn-dark" to = {`/item/${item.id}`} >See Product</Link>
             </div>
         </div>
 
