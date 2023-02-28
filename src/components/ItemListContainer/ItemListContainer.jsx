@@ -1,26 +1,31 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemLIst/ItemList";
-//mio
+
+//Context
+import { useDarkModeContext } from "../../context/DarkModeContext";
+
+
+
 const ItemListContainer = () => {
     const [products , setProducts] = useState([])
     const {idCategory} = useParams()
-
+    const {darkMode} = useDarkModeContext()
     useEffect(() =>  {
         if (idCategory){
             fetch("../json/productos.json")
             .then(response => response.json())
             .then(items => {
-                const products = items.filter(prod => prod.nombre === idCategory)
-                const productsList = ItemList({products}) // Product in JSX
+                const productos = items.filter(prod => prod.nombre === idCategory)
+                const productsList = ItemList({productos}) // Product in JSX
                 setProducts(productsList)
             })
         }
         else{
-            fetch("../json/productos.json")
+            fetch("./json/productos.json")
             .then(response => response.json())
-            .then(products => {
-                const productsList = ItemList({products}) // Products in JSX
+            .then(productos => {
+                const productsList = ItemList({productos}) // Products in JSX
                 setProducts(productsList)
             })
         }

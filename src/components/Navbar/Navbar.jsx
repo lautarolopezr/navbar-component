@@ -3,6 +3,7 @@ import CartWidget from "../CartWidget/CartWidget";
 import Sections from "./Sections/Sections";
 import Greeting from "./Greeting";
 import { Link } from "react-router-dom";
+import DarkModeButton from "./DarkModeButton/DarkModeButton";
 const Navbar = () => {
   return <>
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -17,6 +18,7 @@ const Navbar = () => {
             <Categories />
           </ul>
           <CartWidget/>
+          <DarkModeButton/>
           <Greeting user = "Lautaro"/>
         </div>
       </div>

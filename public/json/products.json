@@ -1,0 +1,92 @@
+[
+    {
+        "id" : 1,
+        "idCategory" : 1, 
+        "name" : "Full Stack Developer Course",
+        "technologies" : "HTML/CSS/JavaScript/React/MongoDB/MySQL",
+        "teacher" : "Lautaro Lopez", 
+        "descritpion" : "Lorem ipsum", 
+        "hours" : 400, 
+        "price" : 170000, 
+        "stock" : 12,
+        "img" : 1
+        
+    },
+    {
+        "id" : 1,
+        "idCategory" : 1, 
+        "name" : "Frontend Developer Course",
+        "technologies" : "HTML/CSS/JavaScript/React",
+        "teacher" : "Stevie Barton", 
+        "descritpion" : "Lorem ipsum", 
+        "hours" : 100, 
+        "price" : 45000, 
+        "stock" : 20,
+        "img" : 1
+        
+    },
+    {
+        "id" : 1,
+        "idCategory" : 1, 
+        "name" : "Backend Course",
+        "technologies" : 1,
+        "teacher" : "Fransisco Pugh", 
+        "descritpion" : "Lorem ipsum", 
+        "hours" : 150, 
+        "price" : 55000, 
+        "stock" : 26,
+        "img" : 1
+        
+    },
+    {
+        "id" : 1,
+        "idCategory" : 1, 
+        "name" : "Q.A Course",
+        "technologies" : 1,
+        "teacher" : "Andrew Austin", 
+        "descritpion" : "Lorem ipsum", 
+        "hours" : 1, 
+        "price" : 50000, 
+        "stock" : 15,
+        "img" : 1
+        
+    },
+    {
+        "id" : 1,
+        "idCategory" : 1, 
+        "name" : "DevOps Course",
+        "technologies" : 1,
+        "teacher" : "Oliver Hensley", 
+        "descritpion" : "Lorem ipsum", 
+        "hours" : 110, 
+        "price" : 65000, 
+        "stock" : 33,
+        "img" : 1
+    },
+    {
+        "id" : 1,
+        "idCategory" : 1, 
+        "name" : "Pyhton Course",
+        "technologies" : 1,
+        "teacher" : 1, 
+        "descritpion" : "Lorem ipsum", 
+        "hours" : 55, 
+        "price" : 1, 
+        "stock" : 1,
+        "img" : 1
+        
+    },
+    {
+        "id" : 1,
+        "idCategory" : 1, 
+        "name" : "I.A Course",
+        "technologies" : 1,
+        "teacher" : 1, 
+        "descritpion" : "Lorem ipsum", 
+        "hours" : 1, 
+        "price" : 1, 
+        "stock" : 1,
+        "img" : 1
+        
+    }
+]
