@@ -13,7 +13,6 @@ export const DarkModeProvider = (props) => {
         } else {
             document.body.firstElementChild.classList.remove('darkMode')
         }
-        console.log(darkMode)
     }
 
 

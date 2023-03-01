@@ -17,7 +17,7 @@ const ItemListContainer = () => {
             .then(response => response.json())
             .then(items => {
                 const productos = items.filter(prod => prod.nombre === idCategory)
-                const productsList = ItemList({productos}) // Product in JSX
+                const productsList = <ItemList products={productos} template={'item'}/> // Product in JSX
                 setProducts(productsList)
             })
         }
@@ -25,7 +25,7 @@ const ItemListContainer = () => {
             fetch("./json/productos.json")
             .then(response => response.json())
             .then(productos => {
-                const productsList = ItemList({productos}) // Products in JSX
+                const productsList = <ItemList products={productos} template={'item'}/> // Products in JSX
                 setProducts(productsList)
             })
         }
