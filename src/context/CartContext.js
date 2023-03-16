@@ -28,23 +28,22 @@ export const CartProvider = (props) =>{
 
     //Add product
 
+
     const addItem = (product , ammount) => {
-        if(isInCart()){
-            const index = cart.findIndex(prod => prod.id === product.id)
-            const aux = {...cart}
-            aux[index].amm = ammount
-            setCart(aux)
+        const productInCart = isInCart(product.id);
+        if (productInCart) {
+          const updatedCart = cart.map((p) =>
+            p.id === productInCart.id ? { ...p, amm: p.amm + ammount } : p
+          );
+          setCart(updatedCart);
         } else {
-            const prodCart = {
-                ...product,
-                amm : ammount
-            }
-
-            setCart([...cart , prodCart])
-
+          const prodCart = {
+            ...product,
+            amm : ammount
+          }
+          setCart([...cart , prodCart])
         }
     }
-    console.log(cart)
 
 
     //Remove product

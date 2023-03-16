@@ -3,7 +3,7 @@ import {getFirestore,doc,collection,addDoc,getDoc,getDocs, updateDoc, deleteDoc}
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBK9UvDf24GNEOfzGMu47_UYXWgmAT945c",
+  apiKey: process.env.API_KEY,
   authDomain: "react-39530-2023-7e7e0.firebaseapp.com",
   projectId: "react-39530-2023-7e7e0",
   storageBucket: "react-39530-2023-7e7e0.appspot.com",

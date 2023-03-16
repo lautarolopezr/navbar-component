@@ -33,8 +33,9 @@ const Cart = () => {
                             <Link to={"/checkout"}><button className="btn btn-success">Finalize Purchase</button></Link>
 
                         </div>
+                        
                     </div>
-
+                    
             }
         </>
     )

@@ -35,13 +35,13 @@ const Contact = () => {
                     <label htmlFor="name" className="form-label">
                         Name and Surname
                     </label>
-                    <input type="text" className={`form-control ${darkMode ? "inputDark" : ""}`} name="name" />
+                    <input type="text" className={`form-control ${darkMode ? "inputDark" : ""}`} name="name" required />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">
                         Email address
                     </label>
-                    <input type="email" className={`form-control ${darkMode ? "inputDark" : ""}`} name="email" />
+                    <input type="email" className={`form-control ${darkMode ? "inputDark" : ""}`} name="email" required/>
                     <div id="emailHelp" className="form-text">
                         We'll never share your email with anyone else.
                     </div>
@@ -50,7 +50,7 @@ const Contact = () => {
                     <label htmlFor="feedback" className="form-label">
                         Let us your feedback
                     </label>
-                    <textarea className={`form-control ${darkMode ? "inputDark" : ""}`} name="feedback" />
+                    <textarea className={`form-control ${darkMode ? "inputDark" : ""}`} name="feedback" required />
                 </div>
                 <button type="submit" className="btn btn-primary">
                     Submit
