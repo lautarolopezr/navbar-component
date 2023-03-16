@@ -53,9 +53,7 @@
     width: 100%;
     background-color: white;
     display: flex;
-    margin: 90px 0;
-    border: 1px solid black;
-}
+    margin: 90px 0;}
 
 .cardCourse__content{
     padding: 0 40px;
@@ -154,4 +152,9 @@
 
 .cardCart {
     max-width: 640px;
+}
+
+.cardCartDark{
+    max-width: 640px;
+    background-color: black;
 }

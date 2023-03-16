@@ -12,7 +12,6 @@ const ItemList = ({products, template}) => {
           :
           products.map(producto => <ItemCart item={producto} key={producto.id}/>)
         }
-        {console.log(template)}     
       </>
     );
 }

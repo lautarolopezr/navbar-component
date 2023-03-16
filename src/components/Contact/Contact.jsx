@@ -1,7 +1,6 @@
 import React from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import Template from "../../Template/Template";
 import { useDarkModeContext } from "../../context/DarkModeContext";
 
 
@@ -10,6 +9,9 @@ const Contact = () => {
     let navigate = useNavigate()
     const dataForm = React.useRef()   
     const {darkMode} = useDarkModeContext()
+
+
+
     const consultForm = (e) => {
         e.preventDefault()
         // console.log(dataForm.current) // I am asking about the current status of the form
@@ -54,7 +56,6 @@ const Contact = () => {
                     Submit
                 </button>
             </form>
-            <Template/>
         </div>
     );
 };

@@ -2,9 +2,9 @@
     {
         "id": 1,
         "idCategoria": 1,
-        "nombre": "Notebook",
-        "marca": "Lenovo",
-        "modelo": "Y510P",
+        "nombre": "JavaScript",
+        "marca": "Course",
+        "modelo": "",
         "precio": 60000,
         "stock": 30,
         "img": "notebook-lenovo.jpg"
