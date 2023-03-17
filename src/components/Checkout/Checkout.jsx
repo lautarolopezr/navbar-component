@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useRef } from 'react';
 import { useDarkModeContext } from '../../context/DarkModeContext';
 import { useCartContext } from '../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
@@ -9,9 +9,11 @@ import { toast } from 'react-toastify';
 import { createPurchaseOrder , getPurchaseOrder , getProduct , updateProduct } from '../../firebase/firebase';
 
 const Checkout = () => {
+    const [email, setEmail] = useState("")
+    const [repEmail , setRepEmail] = useState("")
     const { darkMode } = useDarkModeContext()
     const { cart, emptyCart, totalPrice } = useCartContext()
-    const dataForm = React.useRef()
+    const dataForm = useRef()
     let navigate = useNavigate()
     
     
@@ -26,18 +28,23 @@ const Checkout = () => {
                 prodDBB.stock -= producCart.amm
                 updateProduct(producCart.id, prodDBB)
             })
+
+        if (email === repEmail){
+            createPurchaseOrder(client , aux , totalPrice , new Date().toISOString()).then(purchaseOrder => {
+                toast.success(`Thanks to shopping with us your purchase order is ${purchaseOrder.id} , total price is ${new Intl.NumberFormat("de-DE").format(totalPrice())}`)
+                emptyCart()
+                e.target.reset()
+                navigate("/")
+            })
+        } else{
+            toast.error("Emails are not the same")
+        }
         })
 
-        createPurchaseOrder(client , aux , totalPrice , new Date().toISOString()).then(purchaseOrder => {
-            toast.success(`Thanks to shopping with us your purchase order is ${purchaseOrder.id} , total price is ${new Intl.NumberFormat("de-DE").format(totalPrice())}`)
-            emptyCart()
-            e.target.reset()
-            navigate("/")
-        })
+
     }
     return (
         <>
-        {console.log(cart)}
             {cart.length === 0
                 ?
                 <>
@@ -50,13 +57,13 @@ const Checkout = () => {
                             <label htmlFor="name" className="form-label">
                                 Name and Surname
                             </label>
-                            <input type="text" className={`form-control ${darkMode ? "inputDark" : ""}`} name="name" />
+                            <input type="text" className={`form-control ${darkMode ? "inputDark" : ""}`} name="name" required/>
                         </div>
                         <div className="mb-3">
                             <label htmlFor="email" className="form-label">
                                 Email address
                             </label>
-                            <input type="email" className={`form-control ${darkMode ? "inputDark" : ""}`} name="email" />
+                            <input type="email" className={`form-control ${darkMode ? "inputDark" : ""}`} name="email" id='email' value={email} onChange = {e => setEmail(e.target.value)} required />
                             <div id="emailHelp" className="form-text">
                                 We'll never share your email with anyone else.
                             </div>
@@ -65,13 +72,13 @@ const Checkout = () => {
                             <label htmlFor="email" className="form-label">
                                 Repeat Email address
                             </label>
-                            <input type="email" className={`form-control ${darkMode ? "inputDark" : ""}`} name="repEmail" />
+                            <input type="email" className={`form-control ${darkMode ? "inputDark" : ""}`} name="repEmail" id='repemail' value={repEmail} onChange = {e => setRepEmail(e.target.value)} required />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="feedback" className="form-label">
                                 Address
                             </label>
-                            <input type="text" className={`form-control ${darkMode ? "inputDark" : ""}`} name="direction" />
+                            <input type="text" className={`form-control ${darkMode ? "inputDark" : ""}`} name="direction" required />
                         </div>
                         <button type="submit" className="btn btn-success my-5 d-block mx-auto">
                             End Purchase

@@ -1,3 +1,11 @@
+/*Body*/
+
+.darkMode{
+    background-color: black;
+    height: 100vh;
+}
+
+
 
 .card_products{
     margin: 4px;
@@ -11,10 +19,6 @@
     margin-top: 20px;
 }
 
-.darkMode {
-    background-color: black;
-    color: gainsboro;
-}
 
 .inputDark{
     background-color: #555;

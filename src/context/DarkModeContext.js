@@ -9,9 +9,9 @@ export const DarkModeProvider = (props) => {
     const toggleDarkMode = () => {
         setDarkMode(!darkMode)
         if(!darkMode){
-            document.body.firstElementChild.classList.add('darkMode')
+            document.body.classList.add('darkMode')
         } else {
-            document.body.firstElementChild.classList.remove('darkMode')
+            document.body.classList.remove('darkMode')
         }
     }
 

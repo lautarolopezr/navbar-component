@@ -17,7 +17,7 @@ const Cart = () => {
                     ?
                     <>
                         <p>Cart is empty</p>
-                        <Link><button className="btn btn-dark">Back to Home</button></Link>
+                        <Link to={"/"}><button className="btn btn-dark">Back to Home</button></Link>
                     </>
 
                     :
