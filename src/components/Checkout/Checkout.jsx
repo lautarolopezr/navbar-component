@@ -14,33 +14,34 @@ const Checkout = () => {
     const { darkMode } = useDarkModeContext()
     const { cart, emptyCart, totalPrice } = useCartContext()
     const dataForm = useRef()
+    let emailsMatch = true
     let navigate = useNavigate()
     
     
     const consultForm = (e) => {
-        e.preventDefault()    
-        const datForm = new FormData(dataForm.current)
-        const client = Object.fromEntries(datForm)
-        const aux = [...cart]
-
-        aux.forEach(producCart => {
-            getProduct(producCart.id).then(prodDBB => {
-                prodDBB.stock -= producCart.amm
-                updateProduct(producCart.id, prodDBB)
-            })
-
+         e.preventDefault()    
         if (email === repEmail){
+            const datForm = new FormData(dataForm.current)
+            const client = Object.fromEntries(datForm)
+            const aux = [...cart]
+    
+            aux.forEach(producCart => 
+                getProduct(producCart.id)
+                .then(prodDBB => {
+                    prodDBB.stock -= producCart.amm
+                    updateProduct(producCart.id, prodDBB)
+                })
+                )
             createPurchaseOrder(client , aux , totalPrice , new Date().toISOString()).then(purchaseOrder => {
                 toast.success(`Thanks to shopping with us your purchase order is ${purchaseOrder.id} , total price is ${new Intl.NumberFormat("de-DE").format(totalPrice())}`)
-                emptyCart()
                 e.target.reset()
+                emptyCart()
                 navigate("/")
             })
         } else{
             toast.error("Emails are not the same")
         }
-        })
-
+        
 
     }
     return (

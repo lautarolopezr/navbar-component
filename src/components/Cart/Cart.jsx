@@ -16,7 +16,7 @@ const Cart = () => {
                 cart.length === 0
                     ?
                     <>
-                        <p>Cart is empty</p>
+                        <p className="ml-auto mr-auto">Cart is empty</p>
                         <Link to={"/"}><button className="btn btn-dark">Back to Home</button></Link>
                     </>
 
