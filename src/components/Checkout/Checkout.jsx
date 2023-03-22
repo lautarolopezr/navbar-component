@@ -3,6 +3,7 @@ import { useDarkModeContext } from '../../context/DarkModeContext';
 import { useCartContext } from '../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 
 //Firebase 
@@ -48,9 +49,11 @@ const Checkout = () => {
         <>
             {cart.length === 0
                 ?
-                <>
-                    <h2>Empty cart</h2>
-                </>
+                    <div className="empty-cart">
+                        <i class="fa-solid fa-cart-plus empty-cart__icon"></i>
+                        <p className="empty-cart__text">Cart is empty 😶 </p>
+                        <Link to={"/"}><button className="btn btn-dark"> <i class="fa-solid fa-house"></i> Back to Home</button></Link>
+                    </div>
                 :
                 <div>
                     <form onSubmit={consultForm} ref = {dataForm} className="contact-form">

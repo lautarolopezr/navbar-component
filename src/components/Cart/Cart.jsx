@@ -16,8 +16,11 @@ const Cart = () => {
                 cart.length === 0
                     ?
                     <>
-                        <p className="ml-auto mr-auto">Cart is empty</p>
-                        <Link to={"/"}><button className="btn btn-dark">Back to Home</button></Link>
+                    <div className="empty-cart">
+                        <i class="fa-solid fa-cart-plus empty-cart__icon"></i>
+                        <p className="empty-cart__text">Cart is empty 😶 </p>
+                        <Link to={"/"}><button className="btn btn-dark"> <i class="fa-solid fa-house"></i> Back to Home</button></Link>
+                    </div>
                     </>
 
                     :

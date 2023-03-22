@@ -16,10 +16,14 @@ const ItemCount = ({initvalue,stock , onAdd}) => {
             <button className="btn btn-danger" onClick={() => subtract()}>-</button>
             <a className="btn" href="$"> {count}</a>
             <button className="btn btn-success" onClick={() => add()}>+</button>
+            
+            <div className="my-1">
             <button className="btn btn-dark" onClick={() => addCart()} >Add to cart</button>
             <button className="btn btn-warning">Stock : {stock}</button>
+            </div>
+            
             <hr />
-            <Link to={"/cart"}><button className="btn btn-dark">See Cart</button></Link>
+            <Link to={"/cart"}><button className="btn btn-dark cardCourse__cart">See Cart</button></Link>
         </>
     );
 }

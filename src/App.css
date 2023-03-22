@@ -11,7 +11,6 @@
     margin: 4px;
     align-items: center;
     justify-content: center;
-    
 }
 
 .itemDetail{
@@ -57,7 +56,9 @@
     width: 100%;
     background-color: white;
     display: flex;
-    margin: 90px 0;}
+    margin: 90px 0;
+}
+
 
 .cardCourse__content{
     padding: 0 40px;
@@ -69,8 +70,7 @@
 }
 
 .cardCourse__content__technologies{
-    color: #555;
-    font-size: 14px;
+
 }
 
 
@@ -99,8 +99,59 @@
     text-align: center;
 }
 
-.cardCourse_extra__container{
+
+@media (max-width: 1445px) {
+    .cardCourse, .cardCourseDark{
+        flex-direction: column;
+    }
+    .cardCourse__extra , .cardCourse__extraDark{
+        margin: 1rem;
+        flex-direction: column;
+        border: solid 1px white;
+    }
+
+    .cardCourse__cart , .cardCourse__cartDark{
+        margin-bottom: 2rem;
+    }
+
+    .cardCourse__content{
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .cardCourse__content__technologies , .cardCourse__content__technologiesDark{
+        font-size: .5rem !important;
+        margin: 1.5rem 0;
+    }
+
+
+    .cardCourse__img{
+        width: 100%;
+    }
+
+    .cardCourse__img img{
+        width: 100%;
+    }
+
+    .cardCourse_extra__container {
+        margin : 1rem 0;
+    }
+
+    .cardCourse__content__description, .cardCourse__content__descriptionDark{
+        font-size: .7rem;
+        text-align: left;
+    }
+
+     .cardCourse__content__descriptionDark{
+        background-color: #1f1f1f;
+        padding: 1rem 1rem;
+        border-radius: .6rem;
+        font-size: .7rem;
+        text-align: left;
+    }
+    
 }
+
 
 .fa-clock , .fa-closed-captioning , .fa-shield-halved , .fa-certificate {
     font-size: 30px;
@@ -161,4 +212,23 @@
 .cardCartDark{
     max-width: 640px;
     background-color: black;
+}
+
+
+.empty-cart{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column  ;
+    margin-top: 30vh;
+}
+
+.empty-cart__text{
+    font-size: 4rem;
+    text-align: center;
+}
+
+.empty-cart__icon{
+    font-size: 4rem;
 }
